@@ -1,6 +1,6 @@
-package com.ywkj.mapper;
+package com.xsy.generator.mapper;
 
-import com.ywkj.pojo.QxyFlowProgressArchived;
+import com.xsy.generator.pojo.QxyFlowProgressArchived;
 
 public interface QxyFlowProgressArchivedMapper {
     int deleteByPrimaryKey(String id);

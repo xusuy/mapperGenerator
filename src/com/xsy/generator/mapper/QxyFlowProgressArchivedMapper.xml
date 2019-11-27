@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.ywkj.mapper.QxyFlowProgressArchivedMapper" >
-  <resultMap id="BaseResultMap" type="com.ywkj.pojo.QxyFlowProgressArchived" >
+<mapper namespace="com.xsy.generator.mapper.QxyFlowProgressArchivedMapper" >
+  <resultMap id="BaseResultMap" type="com.xsy.generator.pojo.QxyFlowProgressArchived" >
     <id column="id" property="id" jdbcType="VARCHAR" />
     <result column="customPhoneNo" property="customPhoneNo" jdbcType="VARCHAR" />
     <result column="progressShow" property="progressShow" jdbcType="VARCHAR" />
@@ -51,7 +51,7 @@
     delete from qxyflowprogressarchived
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.ywkj.pojo.QxyFlowProgressArchived" >
+  <insert id="insert" parameterType="com.xsy.generator.pojo.QxyFlowProgressArchived" >
     insert into qxyflowprogressarchived (id, customPhoneNo, progressShow, 
       flowType, state, CreatedTime, 
       tenantId, CreatedUser, CreatedUserName, 
@@ -79,7 +79,7 @@
       #{commitcounselTime,jdbcType=TIMESTAMP}, #{telereferenceEndTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.ywkj.pojo.QxyFlowProgressArchived" >
+  <insert id="insertSelective" parameterType="com.xsy.generator.pojo.QxyFlowProgressArchived" >
     insert into qxyflowprogressarchived
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -266,7 +266,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ywkj.pojo.QxyFlowProgressArchived" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.xsy.generator.pojo.QxyFlowProgressArchived" >
     update qxyflowprogressarchived
     <set >
       <if test="customPhoneNo != null" >
@@ -359,7 +359,7 @@
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ywkj.pojo.QxyFlowProgressArchived" >
+  <update id="updateByPrimaryKey" parameterType="com.xsy.generator.pojo.QxyFlowProgressArchived" >
     update qxyflowprogressarchived
     set customPhoneNo = #{customPhoneNo,jdbcType=VARCHAR},
       progressShow = #{progressShow,jdbcType=VARCHAR},

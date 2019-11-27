@@ -1,4 +1,4 @@
-package com.ywkj.pojo;
+package com.xsy.generator.pojo;
 
 import java.util.Date;
 
