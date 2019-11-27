@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ywkj.mapper.QxyFlowProgressArchivedMapper" >
+  <resultMap id="BaseResultMap" type="com.ywkj.pojo.QxyFlowProgressArchived" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="customPhoneNo" property="customPhoneNo" jdbcType="VARCHAR" />
+    <result column="progressShow" property="progressShow" jdbcType="VARCHAR" />
+    <result column="flowType" property="flowType" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="VARCHAR" />
+    <result column="CreatedTime" property="createdTime" jdbcType="TIMESTAMP" />
+    <result column="tenantId" property="tenantId" jdbcType="VARCHAR" />
+    <result column="CreatedUser" property="createdUser" jdbcType="VARCHAR" />
+    <result column="CreatedUserName" property="createdUserName" jdbcType="VARCHAR" />
+    <result column="LastModifiedUser" property="lastModifiedUser" jdbcType="CHAR" />
+    <result column="LastModifiedUserName" property="lastModifiedUserName" jdbcType="VARCHAR" />
+    <result column="LastModifiedTime" property="lastModifiedTime" jdbcType="TIMESTAMP" />
+    <result column="isCustomMaterialFull" property="isCustomMaterialFull" jdbcType="VARCHAR" />
+    <result column="isThroughClaim" property="isThroughClaim" jdbcType="VARCHAR" />
+    <result column="isAgainApply" property="isAgainApply" jdbcType="VARCHAR" />
+    <result column="isPostBlade" property="isPostBlade" jdbcType="VARCHAR" />
+    <result column="processArchivedId" property="processArchivedId" jdbcType="VARCHAR" />
+    <result column="registrineTime" property="registrineTime" jdbcType="TIMESTAMP" />
+    <result column="commitClaimsMaterialTime" property="commitClaimsMaterialTime" jdbcType="TIMESTAMP" />
+    <result column="materialAuditTime" property="materialAuditTime" jdbcType="TIMESTAMP" />
+    <result column="throughClaimTime" property="throughClaimTime" jdbcType="TIMESTAMP" />
+    <result column="claimCloseoutTime" property="claimCloseoutTime" jdbcType="TIMESTAMP" />
+    <result column="caseCollationAndTranslationTime" property="caseCollationAndTranslationTime" jdbcType="TIMESTAMP" />
+    <result column="seeaDoctoringTime" property="seeaDoctoringTime" jdbcType="TIMESTAMP" />
+    <result column="seeaDoctorThroughTime" property="seeaDoctorThroughTime" jdbcType="TIMESTAMP" />
+    <result column="usaSeeaDoctorTime" property="usaSeeaDoctorTime" jdbcType="TIMESTAMP" />
+    <result column="usaSeeaDoctorEndTime" property="usaSeeaDoctorEndTime" jdbcType="TIMESTAMP" />
+    <result column="gotoAmericaCloseoutTime" property="gotoAmericaCloseoutTime" jdbcType="TIMESTAMP" />
+    <result column="commitcounselTime" property="commitcounselTime" jdbcType="TIMESTAMP" />
+    <result column="telereferenceEndTime" property="telereferenceEndTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, customPhoneNo, progressShow, flowType, state, CreatedTime, tenantId, CreatedUser, 
+    CreatedUserName, LastModifiedUser, LastModifiedUserName, LastModifiedTime, isCustomMaterialFull, 
+    isThroughClaim, isAgainApply, isPostBlade, processArchivedId, registrineTime, commitClaimsMaterialTime, 
+    materialAuditTime, throughClaimTime, claimCloseoutTime, caseCollationAndTranslationTime, 
+    seeaDoctoringTime, seeaDoctorThroughTime, usaSeeaDoctorTime, usaSeeaDoctorEndTime, 
+    gotoAmericaCloseoutTime, commitcounselTime, telereferenceEndTime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from qxyflowprogressarchived
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from qxyflowprogressarchived
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.ywkj.pojo.QxyFlowProgressArchived" >
+    insert into qxyflowprogressarchived (id, customPhoneNo, progressShow, 
+      flowType, state, CreatedTime, 
+      tenantId, CreatedUser, CreatedUserName, 
+      LastModifiedUser, LastModifiedUserName, LastModifiedTime, 
+      isCustomMaterialFull, isThroughClaim, isAgainApply, 
+      isPostBlade, processArchivedId, registrineTime, 
+      commitClaimsMaterialTime, materialAuditTime, 
+      throughClaimTime, claimCloseoutTime, 
+      caseCollationAndTranslationTime, seeaDoctoringTime, 
+      seeaDoctorThroughTime, usaSeeaDoctorTime, 
+      usaSeeaDoctorEndTime, gotoAmericaCloseoutTime, 
+      commitcounselTime, telereferenceEndTime
+      )
+    values (#{id,jdbcType=VARCHAR}, #{customPhoneNo,jdbcType=VARCHAR}, #{progressShow,jdbcType=VARCHAR}, 
+      #{flowType,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR}, #{createdTime,jdbcType=TIMESTAMP}, 
+      #{tenantId,jdbcType=VARCHAR}, #{createdUser,jdbcType=VARCHAR}, #{createdUserName,jdbcType=VARCHAR}, 
+      #{lastModifiedUser,jdbcType=CHAR}, #{lastModifiedUserName,jdbcType=VARCHAR}, #{lastModifiedTime,jdbcType=TIMESTAMP}, 
+      #{isCustomMaterialFull,jdbcType=VARCHAR}, #{isThroughClaim,jdbcType=VARCHAR}, #{isAgainApply,jdbcType=VARCHAR}, 
+      #{isPostBlade,jdbcType=VARCHAR}, #{processArchivedId,jdbcType=VARCHAR}, #{registrineTime,jdbcType=TIMESTAMP}, 
+      #{commitClaimsMaterialTime,jdbcType=TIMESTAMP}, #{materialAuditTime,jdbcType=TIMESTAMP}, 
+      #{throughClaimTime,jdbcType=TIMESTAMP}, #{claimCloseoutTime,jdbcType=TIMESTAMP}, 
+      #{caseCollationAndTranslationTime,jdbcType=TIMESTAMP}, #{seeaDoctoringTime,jdbcType=TIMESTAMP}, 
+      #{seeaDoctorThroughTime,jdbcType=TIMESTAMP}, #{usaSeeaDoctorTime,jdbcType=TIMESTAMP}, 
+      #{usaSeeaDoctorEndTime,jdbcType=TIMESTAMP}, #{gotoAmericaCloseoutTime,jdbcType=TIMESTAMP}, 
+      #{commitcounselTime,jdbcType=TIMESTAMP}, #{telereferenceEndTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ywkj.pojo.QxyFlowProgressArchived" >
+    insert into qxyflowprogressarchived
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="customPhoneNo != null" >
+        customPhoneNo,
+      </if>
+      <if test="progressShow != null" >
+        progressShow,
+      </if>
+      <if test="flowType != null" >
+        flowType,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+      <if test="createdTime != null" >
+        CreatedTime,
+      </if>
+      <if test="tenantId != null" >
+        tenantId,
+      </if>
+      <if test="createdUser != null" >
+        CreatedUser,
+      </if>
+      <if test="createdUserName != null" >
+        CreatedUserName,
+      </if>
+      <if test="lastModifiedUser != null" >
+        LastModifiedUser,
+      </if>
+      <if test="lastModifiedUserName != null" >
+        LastModifiedUserName,
+      </if>
+      <if test="lastModifiedTime != null" >
+        LastModifiedTime,
+      </if>
+      <if test="isCustomMaterialFull != null" >
+        isCustomMaterialFull,
+      </if>
+      <if test="isThroughClaim != null" >
+        isThroughClaim,
+      </if>
+      <if test="isAgainApply != null" >
+        isAgainApply,
+      </if>
+      <if test="isPostBlade != null" >
+        isPostBlade,
+      </if>
+      <if test="processArchivedId != null" >
+        processArchivedId,
+      </if>
+      <if test="registrineTime != null" >
+        registrineTime,
+      </if>
+      <if test="commitClaimsMaterialTime != null" >
+        commitClaimsMaterialTime,
+      </if>
+      <if test="materialAuditTime != null" >
+        materialAuditTime,
+      </if>
+      <if test="throughClaimTime != null" >
+        throughClaimTime,
+      </if>
+      <if test="claimCloseoutTime != null" >
+        claimCloseoutTime,
+      </if>
+      <if test="caseCollationAndTranslationTime != null" >
+        caseCollationAndTranslationTime,
+      </if>
+      <if test="seeaDoctoringTime != null" >
+        seeaDoctoringTime,
+      </if>
+      <if test="seeaDoctorThroughTime != null" >
+        seeaDoctorThroughTime,
+      </if>
+      <if test="usaSeeaDoctorTime != null" >
+        usaSeeaDoctorTime,
+      </if>
+      <if test="usaSeeaDoctorEndTime != null" >
+        usaSeeaDoctorEndTime,
+      </if>
+      <if test="gotoAmericaCloseoutTime != null" >
+        gotoAmericaCloseoutTime,
+      </if>
+      <if test="commitcounselTime != null" >
+        commitcounselTime,
+      </if>
+      <if test="telereferenceEndTime != null" >
+        telereferenceEndTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="customPhoneNo != null" >
+        #{customPhoneNo,jdbcType=VARCHAR},
+      </if>
+      <if test="progressShow != null" >
+        #{progressShow,jdbcType=VARCHAR},
+      </if>
+      <if test="flowType != null" >
+        #{flowType,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null" >
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="tenantId != null" >
+        #{tenantId,jdbcType=VARCHAR},
+      </if>
+      <if test="createdUser != null" >
+        #{createdUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createdUserName != null" >
+        #{createdUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifiedUser != null" >
+        #{lastModifiedUser,jdbcType=CHAR},
+      </if>
+      <if test="lastModifiedUserName != null" >
+        #{lastModifiedUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifiedTime != null" >
+        #{lastModifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isCustomMaterialFull != null" >
+        #{isCustomMaterialFull,jdbcType=VARCHAR},
+      </if>
+      <if test="isThroughClaim != null" >
+        #{isThroughClaim,jdbcType=VARCHAR},
+      </if>
+      <if test="isAgainApply != null" >
+        #{isAgainApply,jdbcType=VARCHAR},
+      </if>
+      <if test="isPostBlade != null" >
+        #{isPostBlade,jdbcType=VARCHAR},
+      </if>
+      <if test="processArchivedId != null" >
+        #{processArchivedId,jdbcType=VARCHAR},
+      </if>
+      <if test="registrineTime != null" >
+        #{registrineTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="commitClaimsMaterialTime != null" >
+        #{commitClaimsMaterialTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="materialAuditTime != null" >
+        #{materialAuditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="throughClaimTime != null" >
+        #{throughClaimTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="claimCloseoutTime != null" >
+        #{claimCloseoutTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="caseCollationAndTranslationTime != null" >
+        #{caseCollationAndTranslationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="seeaDoctoringTime != null" >
+        #{seeaDoctoringTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="seeaDoctorThroughTime != null" >
+        #{seeaDoctorThroughTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="usaSeeaDoctorTime != null" >
+        #{usaSeeaDoctorTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="usaSeeaDoctorEndTime != null" >
+        #{usaSeeaDoctorEndTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gotoAmericaCloseoutTime != null" >
+        #{gotoAmericaCloseoutTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="commitcounselTime != null" >
+        #{commitcounselTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="telereferenceEndTime != null" >
+        #{telereferenceEndTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ywkj.pojo.QxyFlowProgressArchived" >
+    update qxyflowprogressarchived
+    <set >
+      <if test="customPhoneNo != null" >
+        customPhoneNo = #{customPhoneNo,jdbcType=VARCHAR},
+      </if>
+      <if test="progressShow != null" >
+        progressShow = #{progressShow,jdbcType=VARCHAR},
+      </if>
+      <if test="flowType != null" >
+        flowType = #{flowType,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null" >
+        CreatedTime = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="tenantId != null" >
+        tenantId = #{tenantId,jdbcType=VARCHAR},
+      </if>
+      <if test="createdUser != null" >
+        CreatedUser = #{createdUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createdUserName != null" >
+        CreatedUserName = #{createdUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifiedUser != null" >
+        LastModifiedUser = #{lastModifiedUser,jdbcType=CHAR},
+      </if>
+      <if test="lastModifiedUserName != null" >
+        LastModifiedUserName = #{lastModifiedUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifiedTime != null" >
+        LastModifiedTime = #{lastModifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isCustomMaterialFull != null" >
+        isCustomMaterialFull = #{isCustomMaterialFull,jdbcType=VARCHAR},
+      </if>
+      <if test="isThroughClaim != null" >
+        isThroughClaim = #{isThroughClaim,jdbcType=VARCHAR},
+      </if>
+      <if test="isAgainApply != null" >
+        isAgainApply = #{isAgainApply,jdbcType=VARCHAR},
+      </if>
+      <if test="isPostBlade != null" >
+        isPostBlade = #{isPostBlade,jdbcType=VARCHAR},
+      </if>
+      <if test="processArchivedId != null" >
+        processArchivedId = #{processArchivedId,jdbcType=VARCHAR},
+      </if>
+      <if test="registrineTime != null" >
+        registrineTime = #{registrineTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="commitClaimsMaterialTime != null" >
+        commitClaimsMaterialTime = #{commitClaimsMaterialTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="materialAuditTime != null" >
+        materialAuditTime = #{materialAuditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="throughClaimTime != null" >
+        throughClaimTime = #{throughClaimTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="claimCloseoutTime != null" >
+        claimCloseoutTime = #{claimCloseoutTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="caseCollationAndTranslationTime != null" >
+        caseCollationAndTranslationTime = #{caseCollationAndTranslationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="seeaDoctoringTime != null" >
+        seeaDoctoringTime = #{seeaDoctoringTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="seeaDoctorThroughTime != null" >
+        seeaDoctorThroughTime = #{seeaDoctorThroughTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="usaSeeaDoctorTime != null" >
+        usaSeeaDoctorTime = #{usaSeeaDoctorTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="usaSeeaDoctorEndTime != null" >
+        usaSeeaDoctorEndTime = #{usaSeeaDoctorEndTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gotoAmericaCloseoutTime != null" >
+        gotoAmericaCloseoutTime = #{gotoAmericaCloseoutTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="commitcounselTime != null" >
+        commitcounselTime = #{commitcounselTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="telereferenceEndTime != null" >
+        telereferenceEndTime = #{telereferenceEndTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ywkj.pojo.QxyFlowProgressArchived" >
+    update qxyflowprogressarchived
+    set customPhoneNo = #{customPhoneNo,jdbcType=VARCHAR},
+      progressShow = #{progressShow,jdbcType=VARCHAR},
+      flowType = #{flowType,jdbcType=VARCHAR},
+      state = #{state,jdbcType=VARCHAR},
+      CreatedTime = #{createdTime,jdbcType=TIMESTAMP},
+      tenantId = #{tenantId,jdbcType=VARCHAR},
+      CreatedUser = #{createdUser,jdbcType=VARCHAR},
+      CreatedUserName = #{createdUserName,jdbcType=VARCHAR},
+      LastModifiedUser = #{lastModifiedUser,jdbcType=CHAR},
+      LastModifiedUserName = #{lastModifiedUserName,jdbcType=VARCHAR},
+      LastModifiedTime = #{lastModifiedTime,jdbcType=TIMESTAMP},
+      isCustomMaterialFull = #{isCustomMaterialFull,jdbcType=VARCHAR},
+      isThroughClaim = #{isThroughClaim,jdbcType=VARCHAR},
+      isAgainApply = #{isAgainApply,jdbcType=VARCHAR},
+      isPostBlade = #{isPostBlade,jdbcType=VARCHAR},
+      processArchivedId = #{processArchivedId,jdbcType=VARCHAR},
+      registrineTime = #{registrineTime,jdbcType=TIMESTAMP},
+      commitClaimsMaterialTime = #{commitClaimsMaterialTime,jdbcType=TIMESTAMP},
+      materialAuditTime = #{materialAuditTime,jdbcType=TIMESTAMP},
+      throughClaimTime = #{throughClaimTime,jdbcType=TIMESTAMP},
+      claimCloseoutTime = #{claimCloseoutTime,jdbcType=TIMESTAMP},
+      caseCollationAndTranslationTime = #{caseCollationAndTranslationTime,jdbcType=TIMESTAMP},
+      seeaDoctoringTime = #{seeaDoctoringTime,jdbcType=TIMESTAMP},
+      seeaDoctorThroughTime = #{seeaDoctorThroughTime,jdbcType=TIMESTAMP},
+      usaSeeaDoctorTime = #{usaSeeaDoctorTime,jdbcType=TIMESTAMP},
+      usaSeeaDoctorEndTime = #{usaSeeaDoctorEndTime,jdbcType=TIMESTAMP},
+      gotoAmericaCloseoutTime = #{gotoAmericaCloseoutTime,jdbcType=TIMESTAMP},
+      commitcounselTime = #{commitcounselTime,jdbcType=TIMESTAMP},
+      telereferenceEndTime = #{telereferenceEndTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
