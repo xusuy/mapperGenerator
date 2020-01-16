@@ -5,6 +5,9 @@
 
 <generatorConfiguration>
     <context id="testTables" targetRuntime="MyBatis3">
+        <!--使用分隔符-->
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
         <commentGenerator>
             <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
             <property name="suppressAllComments" value="true"/>
@@ -12,7 +15,7 @@
         <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
                         connectionURL="jdbc:mysql://172.16.10.244:3306/rc_dev_cust_test_data"
-                        userId="numysql_root" password="numysql_root">
+                        userId="rc_dev_all" password="6TjKFG9M746S">
         </jdbcConnection>
         <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和 NUMERIC 类型解析为java.math.BigDecimal -->
         <javaTypeResolver>
@@ -39,8 +42,31 @@
 
 
         <!-- 指定数据库表 -->
-        <table tableName="qxyFlowProgressArchived" domainObjectName="QxyFlowProgressArchived" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" >
-            <property name="useActualColumnNames" value="true" />
+        <table tableName="archived_16F9DCA2-0980-023A-C0F2-71A3C32CF55F" domainObjectName="coachClassDetails"
+               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false" delimitIdentifiers="true"
+               delimitAllColumns="true">
+            <!--驼峰方式-->
+            <!--<property name="useActualColumnNames" value="true" />-->
+            <columnOverride column="id" property="id"/>
+            <columnOverride column="state" property="state"/>
+            <columnOverride column="IsDelete" property="isDelete"/>
+            <columnOverride column="CreatedUser" property="createdUser"/>
+            <columnOverride column="CreatedUserName" property="createdUserName"/>
+            <columnOverride column="LastModifiedUser" property="lastModifiedUser"/>
+            <columnOverride column="LastModifiedUserName" property="lastModifiedUserName"/>
+            <columnOverride column="CreatedTime" property="createdTime"/>
+            <columnOverride column="LastModifiedTime" property="lastModifiedTime"/>
+            <columnOverride column="tenantId" property="tenantId"/>
+            <columnOverride column="f_16F9DCA2-A090-024A-B733-4DDF6B9D5EBC" property="courseName"/>
+            <columnOverride column="f_16F9DCA7-6AD0-0250-3FB8-1B16CC4BED01" property="weChatNickname"/>
+            <columnOverride column="f_16F9DCA9-76B0-0253-68F3-30C7045D9465" property="coachName"/>
+            <columnOverride column="f_16F9DCB2-FF90-025C-CCCA-E84A98A39487" property="courseState"/>
+            <columnOverride column="f_16F9DCB4-DF40-025F-428A-43BCEB230316" property="arrangingId"/>
+            <columnOverride column="f_16F9DCAC-1560-0256-6F4D-7838FEC80484" property="beginTime"/>
+            <columnOverride column="f_16F9DCB0-25F0-0259-64D9-B15F5A615762" property="endTime"/>
+            <columnOverride column="f_16F9DCA5-2540-024D-6AD5-51C7F589C4AB" property="phoneNo"/>
+            <!--<ignoreColumn column="f_16F9D936-7040-01D0-A44D-D350EDEB1D2B"/>-->
         </table>
 
     </context>
